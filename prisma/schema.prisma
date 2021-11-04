@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Cust_orders {
+  @@map(name: "cust_orders")
+  ID             Int       @id @default(autoincrement()) @db.UnsignedInt
+  ORDER_DATE     DateTime? @db.DateTime(0)
+  CUSTOMER_ID    Int
+  MEASUREMENT_ID Int
+  PRICE          Float     @db.Float
+  QUANTITY       Int
+  FITTING_DATE   DateTime? @db.DateTime(0)
+  DELIVERY_DATE  DateTime? @db.DateTime(0)
+  SERVED_BY      String?   @db.VarChar(255)
+  DELIVERED      String?   @db.VarChar(25)
+}
+
+model Customer {
+  @@map(name: "customer")
+  CUSTOMER_ID   Int     @id @default(autoincrement()) @db.UnsignedInt
+  FIRST_NAME    String? @db.VarChar(255)
+  LAST_NAME     String? @db.VarChar(255)
+  PHONE_NUMBER1 String  @db.VarChar(50)
+  PHONE_NUMBER2 String? @db.VarChar(50)
+  EMAIL_ADDRESS String? @db.VarChar(255)
+  CITY          String? @db.VarChar(255)
+  COUNTRY       String? @db.VarChar(255)
+  GEO_LOCATION  String? @db.VarChar(255)
+  COMMENTS      String? @db.VarChar(500)
+  CREATED_BY    String? @db.VarChar(255)
+}
+
+model Measurements {
+  @@map(name: "measurements")
+  ID                   Int     @id @default(autoincrement()) @db.UnsignedInt
+  Across_Back          Float?  @db.Float
+  Across_chest         Float?  @db.Float
+  Across_shoulder      Float?  @db.Float
+  Around_Arm           Float?  @db.Float
+  Around_Elbow         Float?  @db.Float
+  Around_waist         Float?  @db.Float
+  Blouse_Length        Float?  @db.Float
+  Bust                 Float?  @db.Float
+  Crotch_Depth         Float?  @map("Crotch Depth") @db.Float
+  Crotch_Length        Float?  @map("Crotch Length") @db.Float
+  Dress_Length         Float?  @db.Float
+  Hemline_Bar          Float?  @db.Float
+  hips                 Float?  @db.Float
+  Knee                 Float?  @db.Float
+  Nape_waist_back      Float?  @db.Float
+  nipple_nipple        Float?  @db.Float
+  shoulder_nipple      Float?  @db.Float
+  shoulder_under_bust  Float?  @map("shoulder_under bust") @db.Float
+  shoulder_waist_front Float?  @db.Float
+  skirt_length         Float?  @map("skirt length") @db.Float
+  sleeve_length        Float?  @db.Float
+  Thigh                Float?  @db.Float
+  Trousers_Length      Float?  @map("Trousers Length") @db.Float
+  under_bust           Float?  @db.Float
+  upper_bust           Float?  @db.Float
+  waist                Float?  @db.Float
+  waist_hips           Float?  @db.Float
+  waist_knee           Float?  @db.Float
+  created_by           String? @db.VarChar(255)
+}
+
+model Users {
+  @@map(name: "users")
+  USER_ID      Int          @id @default(autoincrement()) @db.UnsignedInt
+  USER_NAME    String       @db.VarChar(40)
+  FIRST_NAME   String?      @db.VarChar(40)
+  LAST_NAME    String?      @db.VarChar(40)
+  PHONE_NUMBER String       @db.VarChar(32)
+  PASSWORD     String?      @db.VarChar(40)
+  CREATED_BY   String?      @db.VarChar(40)
+  CREATE_DATE  DateTime?    @db.DateTime(0)
+  CHANGE_DATE  DateTime?    @db.DateTime(0)
+  STATUS       users_STATUS
+  COMMENTS     String?      @db.VarChar(200)
+}
+
+enum users_STATUS {
+  ACTIVE
+  DISABLED
+}
