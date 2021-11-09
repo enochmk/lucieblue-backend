@@ -81,11 +81,12 @@ model Users {
   CREATED_BY   String?      @db.VarChar(40)
   CREATE_DATE  DateTime?    @db.DateTime(0)
   CHANGE_DATE  DateTime?    @db.DateTime(0)
-  STATUS       users_STATUS
+  STATUS       USER_STATUS
   COMMENTS     String?      @db.VarChar(200)
 }
 
-enum users_STATUS {
+enum USER_STATUS {
   ACTIVE
   DISABLED
+	@@map("users_STATUS")
 }
