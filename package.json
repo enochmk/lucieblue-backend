@@ -10,7 +10,7 @@
   "author": "Enoch Klufio, Paul Quartey",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^3.4.0",
+    "@prisma/client": "^3.4.2",
     "chalk": "^4.1.2",
     "config": "^3.3.6",
     "cors": "^2.8.5",
@@ -19,9 +19,8 @@
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.39",
     "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "prisma": "^3.4.0"
   }
 }
