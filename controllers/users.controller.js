@@ -21,3 +21,48 @@ exports.addUser = asyncHandler(async (req, res, next) => {
 		message: response,
 	});
 });
+
+exports.getUsers = asyncHandler(async (req, res, next) => {
+	const User = UserRepo();
+
+	const result = await User.find();
+
+	return res.send({
+		status: true,
+		message: result,
+	});
+});
+
+
+exports.deleteUser = asyncHandler(async (req, res, next) => {
+	const User = UserRepo();
+
+	console.log(req.params);
+
+	const response = await User.delete({
+		ID: req.params.id
+	});
+	
+
+	return res.send({
+		status: true,
+		message: response
+	});
+});
+
+exports.getUser = asyncHandler(async (req, res, next) => {
+	const User = UserRepo();
+
+	console.log(req.params);
+	
+	const response = await User.find({
+		ID: req.params.id
+	});
+	
+
+	return res.send({
+		status: true,
+		message: response
+	});
+});
+
