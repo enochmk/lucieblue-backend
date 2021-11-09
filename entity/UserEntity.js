@@ -7,7 +7,7 @@ module.exports = new EntitySchema({
 		ID: {
 			type: 'int',
 			primary: true,
-			generated: true,			
+			generated: true,
 		},
 		FIRSTNAME: {
 			type: 'varchar',
@@ -28,10 +28,9 @@ module.exports = new EntitySchema({
 			type: 'datetime2',
 			default: () => 'getDate()',
 		},
-			CHANGE_DATE: {
+		CHANGE_DATE: {
 			type: 'datetime2',
-			//default: () => 'getDate()',
+			default: () => 'getDate()',
 		},
-
 	},
 });
