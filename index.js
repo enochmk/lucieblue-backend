@@ -17,6 +17,6 @@ app.use(errorHandler);
 
 // Set server port to listen
 const PORT = process.env.PORT || 3000;
-const MESSAGE = `Lucieblue Backend started in ${process.env.NODE_ENV} on port:${PORT}`;
+const MESSAGE = `Lucieblue Backend started in ${process.env.NODE_ENV} on port: ${PORT}`;
 
 app.listen(PORT, () => console.log(chalk.black.bgGreen(MESSAGE)));

@@ -5,16 +5,30 @@ module.exports = new EntitySchema({
 	tableName: 'tbl_users',
 	columns: {
 		ID: {
-			type: 'varchar',
+			type: 'int',
 			primary: true,
+			generated: true,
 		},
-		FORENAMES: {
+		FIRSTNAME: {
 			type: 'varchar',
 		},
 		SURNAME: {
 			type: 'varchar',
 		},
-		TIMESTAMP: {
+		PHONE_NUMBER: {
+			type: 'varchar',
+		},
+		PASSWORD: {
+			type: 'varchar',
+		},
+		STATUS: {
+			type: 'int',
+		},
+		CREATE_DATE: {
+			type: 'datetime2',
+			default: () => 'getDate()',
+		},
+		CHANGE_DATE: {
 			type: 'datetime2',
 			default: () => 'getDate()',
 		},
