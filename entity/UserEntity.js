@@ -25,12 +25,12 @@ module.exports = new EntitySchema({
 			type: 'int',
 		},
 		CREATE_DATE: {
-			type: 'datetime2',
-			default: () => 'getDate()',
+			type: 'datetime',
+			default: () => 'now()',
 		},
 		CHANGE_DATE: {
-			type: 'datetime2',
-			default: () => 'getDate()',
+			type: 'datetime',
+			default: () => 'now()',
 		},
 	},
 });
