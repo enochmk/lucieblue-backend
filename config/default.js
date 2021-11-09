@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import path from 'path';
+const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 const folderName = path.dirname(__dirname).split('/').pop();

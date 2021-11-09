@@ -4,12 +4,16 @@ const morgan = require('morgan');
 const chalk = require('chalk');
 const dotenv = require('dotenv');
 
+const errorHandler = require('./middleware/errorHandler');
+
 const app = express();
 dotenv.config();
 
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
+app.use('/users/', require('./routes/users.route'));
+app.use(errorHandler);
 
 // Set server port to listen
 const PORT = process.env.PORT || 3000;

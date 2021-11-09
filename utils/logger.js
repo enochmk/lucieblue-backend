@@ -1,9 +1,10 @@
-import os from 'os';
-import fs from 'fs';
-import path from 'path';
-import config from 'config';
-import moment from 'moment';
-import winston, { format } from 'winston';
+const os = require('os');
+const fs = require('fs');
+const path = require('path');
+const config = require('config');
+const moment = require('moment');
+const winston = require('winston');
+const { format } = winston;
 
 const { timestamp, printf } = format;
 const NODE_ENV = config.get('NODE_ENV');
