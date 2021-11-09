@@ -18,6 +18,9 @@ module.exports = new EntitySchema({
 		PHONE_NUMBER: {
 			type: 'varchar',
 		},
+		USERNAME: {
+			type: 'varchar',
+		},
 		PASSWORD: {
 			type: 'varchar',
 		},
