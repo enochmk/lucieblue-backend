@@ -1,6 +1,3 @@
-//const fs = require(fs);
-//const path = require(path);
-
 const asyncHandler = require('../middleware/async');
 const UserRepo = require('../models/User.model');
 

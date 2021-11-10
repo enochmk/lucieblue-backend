@@ -15,6 +15,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use('/users/', require('./routes/users.route'));
+app.use('/customers/', require('./routes/customers.route'));
 app.use(errorHandler);
 
 // Set server port to listen
