@@ -25,3 +25,43 @@ exports.addCustomer = asyncHandler(async (req, res, next) => {
     message: response,
   });
 });
+
+
+/**
+ * @description: delete a Customer from database
+ */
+exports.deleteCustomer = asyncHandler(async (req, res, next) => {
+  const Customer = CustomerRepo();
+
+  const response = await User.delete({
+    ID: req.params.id,
+  });
+
+
+  return res.send({
+    status: true,
+    message: response,
+  });
+
+
+
+});
+
+
+exports.getCustomer = asyncHandler(async (req, res, next) => {
+  const Customer = CustomerRepo();
+
+  const response = await Customer.find({
+    ID: req.params.id,
+  });
+
+  return res.send({
+    status: true,
+    message: response,
+  });
+});
+
+
+/**
+ * @description: update a Customer in the database
+ */
