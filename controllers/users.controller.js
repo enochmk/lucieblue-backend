@@ -61,7 +61,7 @@ exports.deleteUser = asyncHandler(async (req, res, next) => {
 exports.getUser = asyncHandler(async (req, res, next) => {
 	const User = UserRepo();
 
-	const response = await User.find({
+	const response = await User.findOne({
 		ID: req.params.id,
 	});
 
@@ -73,7 +73,7 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 
 
 /**
- * @description: Aupdate a user in database
+ * @description: update a user in database
  */
 exports.updateUser = asyncHandler(async (req, res, next) => {
 	const User = UserRepo();

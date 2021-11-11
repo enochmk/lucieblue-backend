@@ -33,7 +33,7 @@ exports.addCustomer = asyncHandler(async (req, res, next) => {
 exports.deleteCustomer = asyncHandler(async (req, res, next) => {
   const Customer = CustomerRepo();
 
-  const response = await User.delete({
+  const response = await Customer.delete({
     ID: req.params.id,
   });
 
@@ -47,11 +47,10 @@ exports.deleteCustomer = asyncHandler(async (req, res, next) => {
 
 });
 
-
 exports.getCustomer = asyncHandler(async (req, res, next) => {
   const Customer = CustomerRepo();
 
-  const response = await Customer.find({
+  const response = await Customer.findOne({
     ID: req.params.id,
   });
 
