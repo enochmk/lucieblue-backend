@@ -8,8 +8,8 @@ exports.addCustomer = asyncHandler(async (req, res, next) => {
   const Customer = CustomerRepo();
 
   const response = await Customer.save({
-    FIRSTNAME: req.body.firstname,
-    SURNAME: req.body.lastname,
+    FIRSTNAME: req.body.firstName,
+    SURNAME: req.body.lastName,
     ADDRESS: req.body.address,
     ALT_NUMBER: req.body.altNumber,
     CITY: req.body.city,
@@ -78,8 +78,8 @@ exports.updateCustomer = asyncHandler(async (req, res, next) => {
   const Customer = CustomerRepo();
 
   const response = await Customer.update(req.params.id, {
-    FIRSTNAME: req.body.firstname,
-    SURNAME: req.body.lastname,
+    FIRSTNAME: req.body.firstName,
+    SURNAME: req.body.lastName,
     ADDRESS: req.body.address,
     ALT_NUMBER: req.body.altNumber,
     CITY: req.body.city,
